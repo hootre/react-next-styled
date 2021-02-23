@@ -11,7 +11,7 @@ const Post = ({ item, name }) => {
             <title>{item.name}</title>
             <meta name="description" content={item.description}></meta>
           </Head>
-          {name}환경입니다
+          {name} 환경 입니다.
           <Item item={item} />
         </>
       )}
@@ -21,7 +21,14 @@ const Post = ({ item, name }) => {
 
 export default Post;
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { id: '740' } }, { params: { id: '730' } }, { params: { id: '729' } }],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(context) {
   const id = context.params.id;
   const apiUrl = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
   const res = await Axios.get(apiUrl);
