@@ -1,22 +1,23 @@
-import Gnb from "./Gnb";
-import styled from "styled-components";
+import Gnb from './Gnb';
+import gravatar from 'gravatar';
+import { Header } from 'semantic-ui-react';
+
 export default function Top() {
-  const StyledLogoBox = styled.div`
-    display: flex;
-    padding-top: 20;
-  `;
-  const StyledLogo = styled.div`
-    flex: "100px 0 0";
-  `;
   return (
     <>
-      <StyledLogoBox>
-        <StyledLogo>
-          <img src="/images/logo.jpg" alt="logo" />
-        </StyledLogo>
-        <header as="h1">코르동주</header>
-      </StyledLogoBox>
-      <Gnb />
+      <div>
+        <div style={{ display: 'flex', paddingTop: 20 }}>
+          <div style={{ flex: '100px 0 0' }}>
+            <img
+              src={gravatar.url('Logo', { s: '56px', d: 'retro' })}
+              alt="logo"
+              style={{ display: 'block', width: 80 }}
+            />
+          </div>
+          <Header as="h1">코코</Header>
+        </div>
+        <Gnb />
+      </div>
     </>
   );
 }

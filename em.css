@@ -1,4 +1,18 @@
-.test {
-  display: flex;
-  padding-top: 20;
+.tes {
+  display: block;
+  margin: 0 auto;
+  & > strong {
+    overflow: hidden;
+    width: 168px;
+    margin: 10px auto;
+  }
+  & > span {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(120, 108, 194);
+  }
+  .price {
+    color: red;
+  }
 }
